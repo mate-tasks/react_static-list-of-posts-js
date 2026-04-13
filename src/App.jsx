@@ -6,12 +6,14 @@ import usersFromServer from './api/users.json';
 import { PostList } from './components/PostList';
 
 function getUserById(id) {
-  const res =  usersFromServer.find(u => u.id === id) || null;
+  const res = usersFromServer.find(u => u.id === id) || null;
+
   return res;
 }
 
 function findCommentsByPostId(id) {
   const res = commentsFromServer.filter(c => c.postId === id);
+
   return res;
 }
 
@@ -23,9 +25,9 @@ export const posts = postsFromServer.map(p => ({
 
 export const App = () => {
   return (
-  <section className="App">
-    <h1 className="App__title">Static list of posts</h1>
-    <PostList posts={posts} />
-  </section>
-);
+    <section className="App">
+      <h1 className="App__title">Static list of posts</h1>
+      <PostList posts={posts} />
+    </section>
+  );
 };
